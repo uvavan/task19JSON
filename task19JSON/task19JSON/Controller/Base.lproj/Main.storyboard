@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,20 +23,44 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
+                            <view hidden="YES" alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9fn-bP-9Vq">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Load categories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mJy-eW-fs3">
+                                <rect key="frame" x="75" y="215.5" width="224.5" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="xlF-S4-7m0">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                                <color key="color" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cJk-YV-4na" secondAttribute="bottom" id="0iu-UJ-S5P"/>
-                            <constraint firstItem="cJk-YV-4na" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="QaG-Zx-qTO"/>
-                            <constraint firstItem="cJk-YV-4na" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="eaI-LX-5he"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cJk-YV-4na" secondAttribute="trailing" id="rdO-KA-VBa"/>
+                            <constraint firstItem="9fn-bP-9Vq" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="14L-c5-eyJ"/>
+                            <constraint firstItem="cJk-YV-4na" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="21E-gS-Epd"/>
+                            <constraint firstItem="mJy-eW-fs3" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" multiplier="0.7" constant="-22.349999999999994" id="9yU-cj-MCT"/>
+                            <constraint firstItem="mJy-eW-fs3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LkT-d2-o0a"/>
+                            <constraint firstItem="cJk-YV-4na" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="NJQ-GG-grD"/>
+                            <constraint firstItem="9fn-bP-9Vq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="OP8-Vp-cFi"/>
+                            <constraint firstItem="cJk-YV-4na" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="PdH-8F-1se"/>
+                            <constraint firstItem="9fn-bP-9Vq" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="g1p-bw-UuV"/>
+                            <constraint firstItem="xlF-S4-7m0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hbD-SK-t2Q"/>
+                            <constraint firstItem="cJk-YV-4na" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="rtf-Xb-r8i"/>
+                            <constraint firstItem="9fn-bP-9Vq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="t2C-e4-e2U"/>
+                            <constraint firstItem="xlF-S4-7m0" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="zdz-hO-kv8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="30p-Lv-zD7"/>
                     <connections>
+                        <outlet property="ibActivLoad" destination="xlF-S4-7m0" id="gUq-qA-aTi"/>
                         <outlet property="ibTableCategories" destination="cJk-YV-4na" id="UWC-TA-WH2"/>
-                        <segue destination="hED-i8-hfA" kind="show" id="HUJ-JM-XFi"/>
+                        <outlet property="ibViewLoad" destination="9fn-bP-9Vq" id="b9z-xx-Uyi"/>
+                        <segue destination="hED-i8-hfA" kind="show" identifier="showQuestions" id="HUJ-JM-XFi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -64,6 +89,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ueS-Ds-oYn"/>
                     </view>
+                    <connections>
+                        <outlet property="ibQuestionsTableView" destination="Gm0-gj-xB4" id="Zcl-rC-ws4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aPd-U1-qqB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

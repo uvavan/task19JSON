@@ -10,6 +10,7 @@
 		845B09621FD8013C009BC32C /* QuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845B09611FD8013C009BC32C /* QuestionsViewController.swift */; };
 		845B096C1FD802F5009BC32C /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845B096A1FD802F5009BC32C /* TableViewCell.swift */; };
 		845B096D1FD802F5009BC32C /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 845B096B1FD802F5009BC32C /* TableViewCell.xib */; };
+		849732491FDFD371004FA5FD /* nameId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849732481FDFD371004FA5FD /* nameId.swift */; };
 		849AF3771FD7E11800A6B0A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849AF3761FD7E11800A6B0A5 /* AppDelegate.swift */; };
 		849AF3791FD7E11800A6B0A5 /* СategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849AF3781FD7E11800A6B0A5 /* СategoriesViewController.swift */; };
 		849AF37C1FD7E11800A6B0A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 849AF37A1FD7E11800A6B0A5 /* Main.storyboard */; };
@@ -27,6 +28,7 @@
 		845B09611FD8013C009BC32C /* QuestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsViewController.swift; sourceTree = "<group>"; };
 		845B096A1FD802F5009BC32C /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		845B096B1FD802F5009BC32C /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		849732481FDFD371004FA5FD /* nameId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nameId.swift; sourceTree = "<group>"; };
 		849AF3731FD7E11800A6B0A5 /* task19JSON.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = task19JSON.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		849AF3761FD7E11800A6B0A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		849AF3781FD7E11800A6B0A5 /* СategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "СategoriesViewController.swift"; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 		849AF3751FD7E11800A6B0A5 /* task19JSON */ = {
 			isa = PBXGroup;
 			children = (
+				849732481FDFD371004FA5FD /* nameId.swift */,
 				845B09671FD80215009BC32C /* View */,
 				845B09651FD801FC009BC32C /* Controller */,
 				845B09641FD801F4009BC32C /* Model */,
@@ -291,6 +294,7 @@
 				845B096C1FD802F5009BC32C /* TableViewCell.swift in Sources */,
 				849AF3771FD7E11800A6B0A5 /* AppDelegate.swift in Sources */,
 				845B09621FD8013C009BC32C /* QuestionsViewController.swift in Sources */,
+				849732491FDFD371004FA5FD /* nameId.swift in Sources */,
 				84F0BF181FD838FA0086AC5D /* Question.swift in Sources */,
 				84F0BF141FD833370086AC5D /* Categories.swift in Sources */,
 			);

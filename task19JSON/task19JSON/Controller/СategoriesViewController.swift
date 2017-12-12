@@ -13,6 +13,8 @@ import SwiftyJSON
 class RootViewController: UIViewController {
     
     @IBOutlet private weak var ibTableCategories: UITableView!
+    @IBOutlet private weak var ibViewLoad: UIView!
+    @IBOutlet private weak var ibActivLoad: UIActivityIndicatorView!
     //private var datasourse: [Categories] = []
     
     override func viewDidLoad() {
@@ -22,19 +24,19 @@ class RootViewController: UIViewController {
     }
     
     private func loadCategories() {
-        DataManager.instance.clearCategories()
-        Alamofire.request("http://qriusity.com/v1/categories/").responseJSON { response in
-            switch response.result {
-            case .success(let value):
-                let jsonObj = JSON(value)
-                guard let jsonArray = jsonObj.array else { return }
-                for jsonObject in jsonArray {
-                    guard let category = Categories(json: jsonObject) else { continue }
-                    DataManager.instance.addCategory(category)
+        ibTableCategories.isHidden = true
+        ibViewLoad.isHidden = false
+        ibActivLoad.isHidden = false
+        ibActivLoad.startAnimating()
+        DispatchQueue.global().async {
+            DataManager.instance.loadCategories(url: "https://qriusity.com/v1/categories/") {
+                DispatchQueue.main.async { [weak self] in
+                    self?.ibTableCategories.isHidden = false
+                    self?.ibTableCategories.reloadData()
+                    self?.ibActivLoad.stopAnimating()
+                    self?.ibViewLoad.isHidden = true
+                    self?.ibActivLoad.isHidden = true
                 }
-                self.ibTableCategories.reloadData()
-            case .failure(let error) :
-                debugPrint(error)
             }
         }
     }
@@ -50,6 +52,11 @@ class RootViewController: UIViewController {
        return DataManager.instance.categories[indexPath.row].name
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let destVC = segue.destination as? QuestionsViewController else { return }
+        guard let indexPath = sender as? IndexPath else { return }
+        destVC.category = DataManager.instance.categories[indexPath.row]
+    }
 }
 
 extension RootViewController: UITableViewDelegate, UITableViewDataSource {
@@ -70,5 +77,9 @@ extension RootViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 70
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: nameId.showQuestions, sender: indexPath)
     }
 }

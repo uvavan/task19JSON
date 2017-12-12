@@ -10,7 +10,8 @@ import Foundation
 import SwiftyJSON
 
 struct Question {
-    let category: Categories
+    let categoryName: String
+    let categoryId: Int
     let question: String
     let option1: String
     let option2: String
@@ -29,13 +30,14 @@ extension Question {
               let answers = json["answers"].int else {
                 return nil
         }
-        guard let categoryJson = json["category"][""] .object as? JSON else {
+        guard let categoryName = json["category"]["name"].string else {
             return nil
         }
-        guard let category = Categories(json: categoryJson) else {
+        guard let categoryId = json["category"]["id"].int else {
             return nil
         }
-        self.category = category
+        self.categoryName = categoryName
+        self.categoryId = categoryId
         self.id = id
         self.question = question
         self.option1 = json["option1"].stringValue

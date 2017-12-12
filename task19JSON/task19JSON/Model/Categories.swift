@@ -30,4 +30,3 @@ extension Categories {
         self.updatedAt = json["updatedAt"].stringValue
     }
 }
-
