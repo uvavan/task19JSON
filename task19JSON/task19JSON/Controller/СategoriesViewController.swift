@@ -49,7 +49,7 @@ class RootViewController: UIViewController {
     }
     
     private func getCategoryName(for indexPath: IndexPath) -> String? {
-       return DataManager.instance.categories[indexPath.row].name
+        return DataManager.instance.categories[indexPath.row].name
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

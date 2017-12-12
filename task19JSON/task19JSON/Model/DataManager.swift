@@ -19,14 +19,14 @@ final class DataManager {
     // MARK: - Categories method
     func loadCategories(url: String, runDidLoad: (() -> Void)?) {
         DataManager.instance.clearCategories()
-        Alamofire.request(url).responseJSON { response in
+        Alamofire.request(url).responseJSON { [weak self] response in
             switch response.result {
             case .success(let value):
                 let jsonObj = JSON(value)
                 guard let jsonArray = jsonObj.array else { return }
                 for jsonObject in jsonArray {
                     guard let category = Categories(json: jsonObject) else { continue }
-                    self.addCategory(category)
+                    self?.addCategory(category)
                 }
                 runDidLoad?()
             case .failure(let error) :
@@ -44,29 +44,25 @@ final class DataManager {
     }
     
     // MARK: - Question method
-    func loadQuestionsCategoryUrl(of category: Categories) {
-        Alamofire.request("https://qriusity.com/v1/categories/\(category.id)/questions").responseJSON { [weak self] response in
-            switch response.result {
-            case .success(let value):
-                let jsonObj = JSON(value)
-                guard let jsonArray = jsonObj.array else { return }
-                self?.addQuestionOfCategories(questionsJson: jsonArray, category: category.name)
-            case .failure(let error):
-                debugPrint(error)
-            }
-        }
-    }
-    
     func loadQuestionsCategory(of category: Categories, runDidLoad: (() -> Void)?) {
-        if let questions = questionsOfCategories[category.name] {
-
+        if questionsOfCategories[category.name] == nil {
+            Alamofire.request("https://qriusity.com/v1/categories/\(category.id)/questions").responseJSON { [weak self] response in
+                switch response.result {
+                case .success(let value):
+                    let jsonObj = JSON(value)
+                    guard let jsonArray = jsonObj.array else { return }
+                    self?.addQuestionCategories(questionsJson: jsonArray, category: category.name)
+                    runDidLoad!()
+                case .failure(let error):
+                    debugPrint(error)
+                }
+            }
         } else {
-            loadQuestionsCategoryUrl(of: category)
-            return questionsOfCategories[category.name] ?? []
+            runDidLoad!()
         }
     }
     
-    func addQuestionOfCategories(questionsJson: [JSON], category name: String) {
+    func addQuestionCategories(questionsJson: [JSON], category name: String) {
         var questions: [Question] = []
         for jsonObject in questionsJson {
             guard let question = Question(json: jsonObject) else { continue }
