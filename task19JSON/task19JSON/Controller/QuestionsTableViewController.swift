@@ -8,7 +8,7 @@
 
 import UIKit
 
-class QuestionsViewController: UIViewController {
+class QuestionsTableViewController: UIViewController {
     
     @IBOutlet private weak var ibQuestionsTableView: UITableView!
     @IBOutlet private weak var ibLabelLoad: UILabel!
@@ -53,9 +53,15 @@ class QuestionsViewController: UIViewController {
         return questionsCategory[index].question
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let destVC = segue.destination as? QuestionViewController else { return }
+        guard let indexPath = sender as? IndexPath else { return }
+        destVC.question = questionsCategory[indexPath.row]
+    }
+    
 }
 
-extension QuestionsViewController: UITableViewDelegate, UITableViewDataSource {
+extension QuestionsTableViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return questionsCategory.count
     }
@@ -74,6 +80,6 @@ extension QuestionsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //performSegue(withIdentifier: nameId.showQuestions, sender: indexPath)
+        performSegue(withIdentifier: nameId.showDetailsQuestion, sender: indexPath)
     }
 }

@@ -11,17 +11,17 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="RootViewController" customModule="task19JSON" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="СategoriesViewController" customModule="task19JSON" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cJk-YV-4na">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableView>
                             <view hidden="YES" alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9fn-bP-9Vq">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
@@ -38,7 +38,7 @@
                                 <color key="color" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="9fn-bP-9Vq" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="14L-c5-eyJ"/>
                             <constraint firstItem="cJk-YV-4na" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="21E-gS-Epd"/>
@@ -58,6 +58,7 @@
                     <navigationItem key="navigationItem" id="30p-Lv-zD7"/>
                     <connections>
                         <outlet property="ibActivLoad" destination="xlF-S4-7m0" id="gUq-qA-aTi"/>
+                        <outlet property="ibLableLoad" destination="mJy-eW-fs3" id="gJ3-Ch-F8D"/>
                         <outlet property="ibTableCategories" destination="cJk-YV-4na" id="UWC-TA-WH2"/>
                         <outlet property="ibViewLoad" destination="9fn-bP-9Vq" id="b9z-xx-Uyi"/>
                         <segue destination="hED-i8-hfA" kind="show" identifier="showQuestions" id="HUJ-JM-XFi"/>
@@ -67,17 +68,17 @@
             </objects>
             <point key="canvasLocation" x="456.80000000000001" y="118.29085457271366"/>
         </scene>
-        <!--Questions View Controller-->
+        <!--Questions Table View Controller-->
         <scene sceneID="JRh-rn-raz">
             <objects>
-                <viewController id="hED-i8-hfA" customClass="QuestionsViewController" customModule="task19JSON" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="hED-i8-hfA" customClass="QuestionsTableViewController" customModule="task19JSON" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Lsc-ct-xqh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Gm0-gj-xB4">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableView>
                             <view hidden="YES" alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m7l-jd-lU8">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
@@ -95,7 +96,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="m7l-jd-lU8" firstAttribute="top" secondItem="ueS-Ds-oYn" secondAttribute="top" id="1bn-Co-CF9"/>
                             <constraint firstItem="Gm0-gj-xB4" firstAttribute="leading" secondItem="ueS-Ds-oYn" secondAttribute="leading" id="3v2-zH-xA1"/>
@@ -114,11 +115,63 @@
                         <outlet property="ibActivLoad" destination="GtK-Kf-kdI" id="o6f-hj-Ypt"/>
                         <outlet property="ibLabelLoad" destination="sOC-hN-lzc" id="iVo-Xz-eCn"/>
                         <outlet property="ibQuestionsTableView" destination="Gm0-gj-xB4" id="Zcl-rC-ws4"/>
+                        <segue destination="r7r-ax-NFE" kind="show" identifier="showDetailsQuestion" id="DuG-mn-akl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aPd-U1-qqB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1206" y="117"/>
+        </scene>
+        <!--Question View Controller-->
+        <scene sceneID="yuA-kz-lOc">
+            <objects>
+                <viewController id="r7r-ax-NFE" customClass="QuestionViewController" customModule="task19JSON" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qs0-ui-umc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EjM-FD-lAL">
+                                <rect key="frame" x="10" y="64" width="355" height="46.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" semanticContentAttribute="playback" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9da-xQ-lVy">
+                                <rect key="frame" x="10" y="115.5" width="355" height="167"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="gzI-DR-4dg">
+                                <rect key="frame" x="0.0" y="282.5" width="375" height="384.5"/>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="62w-T4-QQe" firstAttribute="bottom" secondItem="gzI-DR-4dg" secondAttribute="bottom" id="AXb-Hj-D0m"/>
+                            <constraint firstItem="EjM-FD-lAL" firstAttribute="top" secondItem="62w-T4-QQe" secondAttribute="top" id="BNr-zB-u4x"/>
+                            <constraint firstItem="EjM-FD-lAL" firstAttribute="leading" secondItem="62w-T4-QQe" secondAttribute="leading" constant="10" id="P3H-zI-mzt"/>
+                            <constraint firstItem="62w-T4-QQe" firstAttribute="trailing" secondItem="9da-xQ-lVy" secondAttribute="trailing" constant="10" id="Xyf-Dr-ebb"/>
+                            <constraint firstItem="9da-xQ-lVy" firstAttribute="top" secondItem="EjM-FD-lAL" secondAttribute="bottom" constant="5" id="ZUh-ej-h41"/>
+                            <constraint firstItem="gzI-DR-4dg" firstAttribute="top" secondItem="9da-xQ-lVy" secondAttribute="bottom" id="eNZ-Q2-nMW"/>
+                            <constraint firstItem="62w-T4-QQe" firstAttribute="trailing" secondItem="gzI-DR-4dg" secondAttribute="trailing" id="hTd-IA-QOC"/>
+                            <constraint firstItem="EjM-FD-lAL" firstAttribute="height" secondItem="qs0-ui-umc" secondAttribute="height" multiplier="0.07" id="lFV-cl-cQR"/>
+                            <constraint firstItem="9da-xQ-lVy" firstAttribute="leading" secondItem="62w-T4-QQe" secondAttribute="leading" constant="10" id="m9X-Th-BOn"/>
+                            <constraint firstItem="62w-T4-QQe" firstAttribute="trailing" secondItem="EjM-FD-lAL" secondAttribute="trailing" constant="10" id="uEb-5v-lPR"/>
+                            <constraint firstItem="gzI-DR-4dg" firstAttribute="leading" secondItem="62w-T4-QQe" secondAttribute="leading" id="w9b-Sk-r1y"/>
+                            <constraint firstItem="9da-xQ-lVy" firstAttribute="height" secondItem="qs0-ui-umc" secondAttribute="height" multiplier="0.25" id="xyo-YF-guT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="62w-T4-QQe"/>
+                    </view>
+                    <size key="freeformSize" width="375" height="667"/>
+                    <connections>
+                        <outlet property="ibLableCategory" destination="EjM-FD-lAL" id="ckN-2n-f10"/>
+                        <outlet property="ibLableQiestion" destination="9da-xQ-lVy" id="n3S-cN-BZP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ElP-Zy-91U" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2009" y="118"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7a1-zg-7tj">

@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		845B09621FD8013C009BC32C /* QuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845B09611FD8013C009BC32C /* QuestionsViewController.swift */; };
+		845B09621FD8013C009BC32C /* QuestionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845B09611FD8013C009BC32C /* QuestionsTableViewController.swift */; };
 		845B096C1FD802F5009BC32C /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845B096A1FD802F5009BC32C /* TableViewCell.swift */; };
 		845B096D1FD802F5009BC32C /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 845B096B1FD802F5009BC32C /* TableViewCell.xib */; };
 		849732491FDFD371004FA5FD /* nameId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849732481FDFD371004FA5FD /* nameId.swift */; };
+		8497324B1FE012CE004FA5FD /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8497324A1FE012CE004FA5FD /* QuestionViewController.swift */; };
 		849AF3771FD7E11800A6B0A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849AF3761FD7E11800A6B0A5 /* AppDelegate.swift */; };
 		849AF3791FD7E11800A6B0A5 /* СategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849AF3781FD7E11800A6B0A5 /* СategoriesViewController.swift */; };
 		849AF37C1FD7E11800A6B0A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 849AF37A1FD7E11800A6B0A5 /* Main.storyboard */; };
@@ -25,10 +26,11 @@
 
 /* Begin PBXFileReference section */
 		81C89E9096F9D3042FA646E9 /* Pods-task19JSON.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-task19JSON.debug.xcconfig"; path = "Pods/Target Support Files/Pods-task19JSON/Pods-task19JSON.debug.xcconfig"; sourceTree = "<group>"; };
-		845B09611FD8013C009BC32C /* QuestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsViewController.swift; sourceTree = "<group>"; };
+		845B09611FD8013C009BC32C /* QuestionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsTableViewController.swift; sourceTree = "<group>"; };
 		845B096A1FD802F5009BC32C /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		845B096B1FD802F5009BC32C /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		849732481FDFD371004FA5FD /* nameId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nameId.swift; sourceTree = "<group>"; };
+		8497324A1FE012CE004FA5FD /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		849AF3731FD7E11800A6B0A5 /* task19JSON.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = task19JSON.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		849AF3761FD7E11800A6B0A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		849AF3781FD7E11800A6B0A5 /* СategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "СategoriesViewController.swift"; sourceTree = "<group>"; };
@@ -69,7 +71,8 @@
 			isa = PBXGroup;
 			children = (
 				849AF3781FD7E11800A6B0A5 /* СategoriesViewController.swift */,
-				845B09611FD8013C009BC32C /* QuestionsViewController.swift */,
+				845B09611FD8013C009BC32C /* QuestionsTableViewController.swift */,
+				8497324A1FE012CE004FA5FD /* QuestionViewController.swift */,
 				849AF37A1FD7E11800A6B0A5 /* Main.storyboard */,
 			);
 			path = Controller;
@@ -292,8 +295,9 @@
 				849AF3791FD7E11800A6B0A5 /* СategoriesViewController.swift in Sources */,
 				84F0BF121FD8309E0086AC5D /* DataManager.swift in Sources */,
 				845B096C1FD802F5009BC32C /* TableViewCell.swift in Sources */,
+				8497324B1FE012CE004FA5FD /* QuestionViewController.swift in Sources */,
 				849AF3771FD7E11800A6B0A5 /* AppDelegate.swift in Sources */,
-				845B09621FD8013C009BC32C /* QuestionsViewController.swift in Sources */,
+				845B09621FD8013C009BC32C /* QuestionsTableViewController.swift in Sources */,
 				849732491FDFD371004FA5FD /* nameId.swift in Sources */,
 				84F0BF181FD838FA0086AC5D /* Question.swift in Sources */,
 				84F0BF141FD833370086AC5D /* Categories.swift in Sources */,

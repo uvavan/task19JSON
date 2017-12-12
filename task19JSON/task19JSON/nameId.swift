@@ -10,4 +10,5 @@ import Foundation
 
 enum nameId {
     static let showQuestions = "showQuestions"
+    static let showDetailsQuestion = "showDetailsQuestion"
 }

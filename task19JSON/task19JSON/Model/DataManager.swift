@@ -52,13 +52,13 @@ final class DataManager {
                     let jsonObj = JSON(value)
                     guard let jsonArray = jsonObj.array else { return }
                     self?.addQuestionCategories(questionsJson: jsonArray, category: category.name)
-                    runDidLoad!()
+                    runDidLoad?()
                 case .failure(let error):
                     debugPrint(error)
                 }
             }
         } else {
-            runDidLoad!()
+            runDidLoad?()
         }
     }
     

@@ -10,11 +10,12 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-class RootViewController: UIViewController {
+class СategoriesViewController: UIViewController {
     
     @IBOutlet private weak var ibTableCategories: UITableView!
     @IBOutlet private weak var ibViewLoad: UIView!
     @IBOutlet private weak var ibActivLoad: UIActivityIndicatorView!
+    @IBOutlet private weak var ibLableLoad: UILabel!
     //private var datasourse: [Categories] = []
     
     override func viewDidLoad() {
@@ -25,12 +26,14 @@ class RootViewController: UIViewController {
     
     private func loadCategories() {
         ibTableCategories.isHidden = true
+        ibLableLoad.isHidden = false
         ibViewLoad.isHidden = false
         ibActivLoad.isHidden = false
         ibActivLoad.startAnimating()
         DispatchQueue.global().async {
             DataManager.instance.loadCategories(url: "https://qriusity.com/v1/categories/") {
                 DispatchQueue.main.async { [weak self] in
+                    self?.ibLableLoad.isHidden = true
                     self?.ibTableCategories.isHidden = false
                     self?.ibTableCategories.reloadData()
                     self?.ibActivLoad.stopAnimating()
@@ -53,13 +56,13 @@ class RootViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let destVC = segue.destination as? QuestionsViewController else { return }
+        guard let destVC = segue.destination as? QuestionsTableViewController else { return }
         guard let indexPath = sender as? IndexPath else { return }
         destVC.category = DataManager.instance.categories[indexPath.row]
     }
 }
 
-extension RootViewController: UITableViewDelegate, UITableViewDataSource {
+extension СategoriesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return DataManager.instance.categories.count
     }
