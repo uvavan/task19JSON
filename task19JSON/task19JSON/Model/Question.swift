@@ -13,10 +13,7 @@ struct Question {
     let categoryName: String
     let categoryId: Int
     let question: String
-    let option1: String
-    let option2: String
-    let option3: String
-    let option4: String
+    var options: [String]
     let answers: Int
     let id: Int
     let createdAt: String
@@ -40,10 +37,11 @@ extension Question {
         self.categoryId = categoryId
         self.id = id
         self.question = question
-        self.option1 = json["option1"].stringValue
-        self.option2 = json["option2"].stringValue
-        self.option3 = json["option3"].stringValue
-        self.option4 = json["option4"].stringValue
+        self.options = []
+        for index in 1...4 {
+            let option = json["option\(index)"].stringValue
+            self.options.append(option)
+        }
         self.answers = answers
         self.createdAt = json["createdAt"].stringValue
         self.updatedAt = json["updatedAt"].stringValue

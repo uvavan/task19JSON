@@ -17,7 +17,6 @@
 		849AF37C1FD7E11800A6B0A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 849AF37A1FD7E11800A6B0A5 /* Main.storyboard */; };
 		849AF37E1FD7E11800A6B0A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 849AF37D1FD7E11800A6B0A5 /* Assets.xcassets */; };
 		849AF3811FD7E11800A6B0A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 849AF37F1FD7E11800A6B0A5 /* LaunchScreen.storyboard */; };
-		84E4CB421FD85E4300F4C10D /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 849AF3821FD7E11800A6B0A5 /* Info.plist */; };
 		84F0BF121FD8309E0086AC5D /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F0BF111FD8309E0086AC5D /* DataManager.swift */; };
 		84F0BF141FD833370086AC5D /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F0BF131FD833370086AC5D /* Categories.swift */; };
 		84F0BF181FD838FA0086AC5D /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F0BF171FD838FA0086AC5D /* Question.swift */; };
@@ -211,7 +210,6 @@
 				849AF3811FD7E11800A6B0A5 /* LaunchScreen.storyboard in Resources */,
 				845B096D1FD802F5009BC32C /* TableViewCell.xib in Resources */,
 				849AF37E1FD7E11800A6B0A5 /* Assets.xcassets in Resources */,
-				84E4CB421FD85E4300F4C10D /* Info.plist in Resources */,
 				849AF37C1FD7E11800A6B0A5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

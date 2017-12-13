@@ -142,8 +142,50 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="gzI-DR-4dg">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="gzI-DR-4dg">
                                 <rect key="frame" x="0.0" y="282.5" width="375" height="384.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eJg-uy-rwB">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="buttonOptionsPress:" destination="r7r-ax-NFE" eventType="touchUpInside" id="Lcg-kx-KLg"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4SB-41-b1v">
+                                        <rect key="frame" x="0.0" y="96" width="375" height="96.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="buttonOptionsPress:" destination="r7r-ax-NFE" eventType="touchUpInside" id="9Qt-1U-9CT"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eJQ-NV-1pz">
+                                        <rect key="frame" x="0.0" y="192.5" width="375" height="96"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="buttonOptionsPress:" destination="r7r-ax-NFE" eventType="touchUpInside" id="dzs-wt-FxY"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6j0-kk-aEg">
+                                        <rect key="frame" x="0.0" y="288.5" width="375" height="96"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="buttonOptionsPress:" destination="r7r-ax-NFE" eventType="touchUpInside" id="ktk-Qc-Cl5"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -165,8 +207,13 @@
                     </view>
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
+                        <outlet property="ibButtonOption1" destination="eJg-uy-rwB" id="X13-P9-OcX"/>
+                        <outlet property="ibButtonOption2" destination="4SB-41-b1v" id="JfL-kw-Seq"/>
+                        <outlet property="ibButtonOption3" destination="eJQ-NV-1pz" id="dEd-tN-BgC"/>
+                        <outlet property="ibButtonOption4" destination="6j0-kk-aEg" id="YsW-d1-a9X"/>
                         <outlet property="ibLableCategory" destination="EjM-FD-lAL" id="ckN-2n-f10"/>
                         <outlet property="ibLableQiestion" destination="9da-xQ-lVy" id="n3S-cN-BZP"/>
+                        <outlet property="ibStackViewVertical" destination="gzI-DR-4dg" id="lOf-K2-sjT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ElP-Zy-91U" userLabel="First Responder" sceneMemberID="firstResponder"/>
