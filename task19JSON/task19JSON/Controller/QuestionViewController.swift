@@ -27,20 +27,12 @@ class QuestionViewController: UIViewController {
     private func setupButton() {
         for (index, option) in (question?.options)!.enumerated() {
             buttonOptions.append(UIButton())
-            buttonOptions[index].titleLabel?.textColor = UIColor.black
-            buttonOptions[index].titleLabel?.isEnabled = true
-            buttonOptions[index].backgroundColor = UIColor.white
-            buttonOptions[index].setTitle("\(index). \"" + option + "\"", for: UIControlState.normal)
+            buttonOptions[index].setTitleColor(.white, for: .normal)
+            buttonOptions[index].titleLabel?.isHidden = false
+            buttonOptions[index].setTitle("\(index + 1). \"" + option + "\"", for: UIControlState.normal)
+            buttonOptions[index].addTarget(self, action: #selector(buttonOptionsPress(_:)), for: UIControlEvents.allTouchEvents)
             ibStackViewVertical.addArrangedSubview(buttonOptions[index])
         }
-//        guard let option1 = question?.options[0] else { return }
-//        ibButtonOption1.setTitle("A. \"" + option1 + "\"", for: .normal)
-//        guard let option2 = question?.options[1] else { return }
-//        ibButtonOption2.setTitle("B. \"" + option2 + "\"", for: .normal)
-//        guard let option3 = question?.options[2] else { return }
-//        ibButtonOption3.setTitle("C. \"" + option3 + "\"", for: .normal)
-//        guard let option4 = question?.options[3] else { return }
-//        ibButtonOption4.setTitle("D. \"" + option4 + "\"", for: .normal)
     }
     
     private func alertShow(title: String, text: String, currectAnswer: Bool) {
@@ -54,22 +46,10 @@ class QuestionViewController: UIViewController {
         self.present(alertVC, animated: true, completion: nil)
     }
     
-    @IBAction private func buttonOptionsPress(_ sender: UIButton) {
+    @objc private func buttonOptionsPress(_ sender: UIButton) {
         guard let ansvers = sender.currentTitle else { return }
         guard let indexAnsvers = question?.answers else { return }
-        let ansversIsTrue: Bool
-        switch indexAnsvers {
-        case 1:
-            ansversIsTrue = ansvers.first == "A"
-        case 2:
-            ansversIsTrue = ansvers.first == "B"
-        case 3:
-            ansversIsTrue = ansvers.first == "C"
-        case 4:
-            ansversIsTrue = ansvers.first == "D"
-        default:
-            ansversIsTrue = false
-        }
+        let ansversIsTrue = ansvers.first == String(indexAnsvers).first
         let textAlert = ansversIsTrue ? "Это правильный ответ!" : "Попробуйте еще раз"
         let titleAlert = ansversIsTrue ? "Поздравляем!" : "Упс!"
         alertShow(title: titleAlert, text: textAlert, currectAnswer: ansversIsTrue)
